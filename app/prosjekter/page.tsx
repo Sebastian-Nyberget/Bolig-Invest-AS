@@ -1,5 +1,6 @@
 import { Separator } from "@/components/ui/separator";
 import { client } from "@/lib/sanity";
+import { PortableText } from "next-sanity";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -42,9 +43,9 @@ const Projects = async () => {
               <h2 className="font-medium text-lg hover:underline">
                 {item.title}
               </h2>
-              <p className="mt-1 text-muted-foreground line-clamp-3">
-                {item.short_description}
-              </p>
+              <div className="mt-1 text-muted-foreground line-clamp-3">
+                <PortableText value={item.short_description} />
+              </div>
               <div className="mt-3 flex flex-wrap gap-2">
                 {item.category.map((tagItem, index) => (
                   <span 
