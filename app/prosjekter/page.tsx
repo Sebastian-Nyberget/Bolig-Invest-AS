@@ -1,5 +1,6 @@
 import { Separator } from "@/components/ui/separator";
 import { client } from "@/lib/sanity";
+import Project from "@/types/Project";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
 import Link from "next/link";
@@ -22,7 +23,7 @@ async function getData() {
 } 
 
 const Projects = async () => {
-  const data = await getData();
+  const data: Project[] = await getData();
 
   return (
     <main className="max-w-7xl w-full px-4 md:px-8 mx-auto">
